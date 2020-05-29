@@ -31,7 +31,7 @@ if($pp){
     print_r($pposts->getPosts());
 }
 
-//**cargar last public */
+//**cargar last post */
 
 $lp = in_array('lp', array_keys($_GET));
 if($lp){
