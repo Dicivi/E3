@@ -18,7 +18,7 @@ const app_home ={
                                 <h5 class="mb-1">${ post.title }</h5>
                                 <small>${ post.fecha }</small>
                             </div>
-                            <p class="mb-1">${ post.body.substr(1.100) }...<b>see more</b></p>
+                            <p class="mb-1">${ post.body.substr(1,100) }...<b>see more</b></p>
                             <small class="text-secondary" >By: <b>${ post.name }</b> </small>
                         </a>
                      `;
