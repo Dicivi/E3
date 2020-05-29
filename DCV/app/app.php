@@ -27,7 +27,7 @@ if($logout){
 $pp = in_array('pp', array_keys($_GET));
 
 if($pp){
-    $pposts = new PostsController;
+    $pposts = new PostsController();
     print_r($pposts->getPosts());
 }
 
@@ -36,6 +36,16 @@ if($pp){
 $lp = in_array('lp', array_keys($_GET));
 if($lp){
     $limit = filter_input(INPUT_GET,'limit');
-    $lpost = new PostsController;
+    $lpost = new PostsController();
     print_r($lpost->getPosts($limit));
+}
+
+/***CARGAR publicacion selected */
+
+$op = in_array('op', array_keys($_GET));
+
+if($op){
+    $id = filter_input(INPUT_GET,'id');
+    $opost = new PostsController();
+    print_r($opost->openPost($id));
 }
