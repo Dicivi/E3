@@ -10,7 +10,7 @@ class posts extends DB {
 
     function __construct(){
         parent::__construct();
-        $table->table = $this->db_connect();
+        $this->table = $this->db_connect();
     }
     protected $campos = ['userId','title','body'];
 
