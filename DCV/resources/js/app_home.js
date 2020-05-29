@@ -1,6 +1,6 @@
 const app_home ={
 
-    url: "/app/app.php",
+    url: "../../app/app.php",
 
     pp : $("#previous-posts"),
     lp : $("#last-post"), 
