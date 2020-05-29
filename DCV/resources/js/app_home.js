@@ -30,23 +30,20 @@ const app_home ={
     lastPost : function(limit){
         var html = "";
         this.lp.html("");
-        fetch(this.url + "?lp&limit" + limit)
+        fetch(this.url + "?lp&limit=" + limit)
             .then( response => response.json())
             .then( lpresp => {
                 html = `
-                    <div class="w-100 border-botom mb-3">
-                        <h3 class"mb=1>${ lpresp([0].title )}</h3>
+                    <div class="w-100 border-bottom mb-3">
+                        <h3 class"mb=1>${ lpresp[0].title }</h3>
                         <small>By: <b>${ lpresp[0].name }</b> | ${ lpresp[0].fecha }</small>
                     </div>
                     <p class"mb-1 py-2 lead text-justify">${ lpresp[0].body }</p>
                 `;
                 this.lp.html(html);
                 
-            }) .catch(err => console.log( err ));
+            }).catch(err => console.log( err ));
     }
     
    
 }
-
-
-
