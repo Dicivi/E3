@@ -79,7 +79,7 @@ class DB{
 
 
     public function get(){
-        $sql =  'select ' . $this->s . 
+        $sql =  ' select ' . $this->s . 
                 ' from ' . str_replace("Models\\","",get_class($this)) . ' a ' .
                 $this->j .
                 ' where ' . $this->w .
