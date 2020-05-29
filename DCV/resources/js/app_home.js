@@ -2,7 +2,7 @@ const app_home ={
 
     url: "/app/app.php",
 
-    pp : $("#previous_posts"),
+    pp : $("#previous-posts"),
     lp : $("#last-post"), 
 
     previousPosts : function(){
