@@ -9,7 +9,7 @@ use Controllers\auth\LoginController as LoginController;
 
 $ua = new LoginController;
 
-is_null($ua->sessionValidate()) ? header ("Location : /DCV/resources/views/auth/inisesion.php") : '';
+is_null($ua->sessionValidate()) ? header ("Location : ../../resources/views/auth/inisesion.php") : '';
 
 head($ua);
 
@@ -43,7 +43,7 @@ head($ua);
 </div>
 
 <?php scripts(); ?>
-<script src="/DCV/resources/js/app_myposts.js"></script>
+<script src="../../resources/js/app_myposts.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         app_myposts.getMyPosts(<?=$ua->id?>);

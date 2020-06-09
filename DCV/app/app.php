@@ -66,7 +66,7 @@ $np = in_array('uid', array_keys($_POST));
 
 if($np){
     $datos = filter_input_array(INPUT_POST,FILTER_SANITIZE_SPECIAL_CHARS);
-    $np = new PostsController();
-    $np->newPost($datos);
-    header("Location: /DCV/resources/views/myposts.php");
+    $npost = new PostsController();
+    $npost->newPost($datos);
+    header("Location: ../resources/views/myposts.php");
 }
