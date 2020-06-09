@@ -49,3 +49,24 @@ if($op){
     $opost = new PostsController();
     print_r($opost->openPost($id));
 }
+
+/**Cargar mis publicaciones */
+$mp = in_array('mp', array_keys($_GET));
+
+if($mp){
+    $id = filter_input(INPUT_GET,'id');
+    $mposts = new PostsController();
+    print_r($mposts->myPosts($id));
+
+}
+
+/**New post */
+
+$np = in_array('uid', array_keys($_POST));
+
+if($np){
+    $datos = filter_input_array(INPUT_POST,FILTER_SANITIZE_SPECIAL_CHARS);
+    $np = new PostsController();
+    $np->newPost($datos);
+    header("Location: /DCV/resources/views/myposts.php");
+}

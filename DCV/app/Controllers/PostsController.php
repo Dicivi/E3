@@ -33,4 +33,20 @@ class PostsController {
         return $result;
     }
 
+    public function myPosts($id){
+        $post = new posts();
+        $result = $post->select(['id','title','body','date_format(created_at,"%d/%m/%Y") as fecha'])
+                    ->where([['userId',$id]])
+                    ->orderBy([['created_at','DESC']])
+                    ->get();
+        return $result;
+    }
+
+    public function newPost($datos){
+        $post = new posts();
+        $post->valores = [$datos['uid'],$datos['title'],$datos['body']];
+        $result = $post->create();
+
+
+    }
 }

@@ -26,7 +26,7 @@ function head($ua=null){
             <ul class="collapse-nav mr-auto">
             <?php if(!is_null($ua) && $ua->sv){ ?>
                 <li class="nav-item active">
-                    <a href="/resourc/views/publicaciones.php" class="nav-link">Feed</a>
+                    <a href="#" onclick="app.view('myposts')" class="nav-link">Feed</a>
                 </li>
             <?php } ?>
             </ul>
@@ -38,7 +38,7 @@ function head($ua=null){
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?=$ua->name?></a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <button type ='button' class="dropdown-item" onclick="app.view('logout')">Sign out</button>
                
                
@@ -56,7 +56,7 @@ function scripts($script=""){
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/app.js"></script>
-
+    <script src="https://kit.fontawesome.com/3bae5d87ff.js" crossorigin="anonymous"></script>
     <?php
 
     echo $script;

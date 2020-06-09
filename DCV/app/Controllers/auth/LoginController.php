@@ -6,8 +6,9 @@ use Models\user;
 
 class LoginController {
 
-    public $sv;
+    public $sv;//sesion valida
     public $name;
+    public $id;
     public function __construct(){
         $this->sv = false;
     }
@@ -43,6 +44,7 @@ class LoginController {
                 session_write_close();
                 $this->sv = true;
                 $this->name = \json_decode($result)[0]->name;
+                $this->id = \json_decode($result)[0]->id;
                 return $result;
             }
         }
@@ -63,6 +65,8 @@ class LoginController {
         \session_write_close();
         $this->sv = false;
         $this->name = "";
+        $this->id = "";
+
         return;
     }
 }
