@@ -49,4 +49,19 @@ class PostsController {
 
 
     }
+    
+    public function viewPost($pid) {
+        $post = new posts();
+        $result = $post->where([['id',$pid]])->get();
+        
+        return $result;
+    }
+
+    public function deletePost($pid) {
+        $post = new posts();
+        $result = $post->where([['id',$pid]])->delete();
+
+        return $result;
+    }
+
 }

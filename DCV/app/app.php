@@ -70,3 +70,20 @@ if($np){
     $npost->newPost($datos);
     header("Location: ../resources/views/myposts.php");
 }
+$vp = in_array('vp', array_keys($_GET));
+
+if($vp) {
+    $id = filter_input(INPUT_GET,'id');
+    $vpost = new PostsController();
+    print_r($vpost->viewPost($id));
+}
+
+$dp = in_array('dp', array_keys($_GET));
+
+if($dp) {
+    $id = filter_input(INPUT_GET,'id');
+    $dpost = new PostsController();
+    $dpost->deletePost($id);
+
+    header("Location: ../resources/views/myposts.php");
+}

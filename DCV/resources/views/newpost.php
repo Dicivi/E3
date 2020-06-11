@@ -21,7 +21,7 @@ head($ua);
     <input type="hidden" name="uid" value="<?=$ua->id?>">
     <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" require>
+        <input type="text" name="title" class="form-control" id="title" require>
     </div>
     <div class="form-groip">
         <label for="body" >Texto</label>
@@ -36,7 +36,7 @@ head($ua);
 <script src="../../resources/js/app_newpost.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        app_myposts.getMyPosts(<?=$ua->id?>);
+      
      
     });
 </script>

@@ -42,7 +42,11 @@ head($ua);
 
 </div>
 
-<?php scripts(); ?>
+<?php 
+include "partials/viewpost.html";
+scripts(); 
+
+?>
 <script src="../../resources/js/app_myposts.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){

@@ -105,4 +105,13 @@ class DB{
         return $stmt->execute();
 
     }
+
+    public function delete(){
+        $sql = 'delete from ' . str_replace("Models\\","",get_class($this)) . ' where ' . $this->w;
+
+        $this->r = $this->table->query($sql);
+
+        return json_encode($this->r);
+    }
+
 }
